@@ -55,6 +55,34 @@
         height: auto;
         }
 
+        .hero .funding {
+        position: absolute;
+        bottom: 1rem;           /* distance from the bottom of .hero */
+        left: 50%;              /* start at horizontal midpoint */
+        transform: translateX(-50%);
+        width: auto;            /* shrink-to-fit content */
+        text-align: center;
+        z-index: 2;
+        font-size: 1.2rem;
+        }
+
+        /* .funding {         */
+        /* margin: 1rem 0 2rem; */
+        /* opacity: 0.9; */
+        /* font-size: 1.2rem; */
+        /* color: #000000; */
+        /* display: flex; */
+        /* align-items: center; */
+        /* justify-content: center; */
+        /* gap: 0.5rem; */
+        /* }  */
+
+        .funding-logo {
+        height: 1.2em;
+        width: auto;
+        filter: brightness(0) invert(1); /* if you need a white version */
+        }
+
         @keyframes float {
             0%, 100% { transform: translateY(0px); }
             50% { transform: translateY(-20px); }
@@ -398,10 +426,13 @@
                 <img src="SwarmChat-logo.png" alt="SwarmChat logo" class="hero-logo">
                 <h1>SwarmChat</h1>
                 <div class="subtitle">Natural Language Control for Robot Swarms</div>
+                
+
                 <div class="description">
                     Enabling intuitive human-swarm robot conversation through Large Language models and behavior trees. 
                     Command multiple robots naturally using natural language.
                 </div>
+                
                 <div class="cta-buttons">
                     <a href="https://github.com/Inventors-Hub/SwarmChat" class="btn btn-primary">
                         <i class="fab fa-github"></i> View on GitHub
@@ -413,8 +444,16 @@
                         <i class="fas fa-play"></i> Live Demo
                     </a>
                 </div>
+
             </div>
+
         </div>
+                                                </div>
+                <div class="funding">
+                <span>Funded by the European Union under the </span>
+                <a href="https://he-utter.eu/" target="_blank" rel="noopener"> UTTER </a>
+                <span>programme.</span>
+                </div>
     </section>
 
     <!-- About Section -->
@@ -479,7 +518,7 @@
             <h2>Performance Results</h2>
             <div class="results-grid">
                 <div class="result-card fade-in">
-                    <div class="result-number">0.80</div>
+                    <div class="result-number">0.805</div>
                     <div class="result-label">BLEU Score (Fine-tuned)</div>
                 </div>
                 <div class="result-card fade-in">
