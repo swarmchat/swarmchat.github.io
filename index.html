@@ -416,6 +416,30 @@
         .results-grid + div p {
             color: #333;
         }
+        
+        /* Responsive video embed */
+        .video-container {
+          position: relative;
+          width: 100%;
+          height: 0;
+          padding-bottom: 56.25%; /* 16:9 aspect ratio */
+          margin: 2rem 0;         /* optional spacing */
+        }
+        .video-container iframe {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border: 0;
+        }
+
+        .arrow-numbers {
+        display: inline-block;    /* treat as one unit */
+        white-space: nowrap;      /* force no wrap */
+        font-size: 2rem;          /* tweak this to taste (was 3rem) */
+        line-height: 1;           /* tighten up vertical spacing */
+        }
     </style>
 </head>
 <body>
@@ -518,24 +542,33 @@
             <h2>Performance Results</h2>
             <div class="results-grid">
                 <div class="result-card fade-in">
-                    <div class="result-number">0.805</div>
-                    <div class="result-label">BLEU Score (Fine-tuned)</div>
+                      <div class="result-number">
+                            <span class="arrow-numbers">26% → 66%</span>
+                        </div>
+                    <div class="result-label">BLEU Score</div>
                 </div>
                 <div class="result-card fade-in">
-                    <div class="result-number">72%</div>
-                    <div class="result-label">Zero-shot Accuracy</div>
+                      <div class="result-number">
+                        <span class="arrow-numbers">36% → 69%</span>
+                    </div>
+                    <div class="result-label">ROUGE-L</div>
                 </div>
                 <div class="result-card fade-in">
-                    <div class="result-number">98%</div>
+                    <div class="result-number">
+                        <span class="arrow-numbers">0% → 72%</span>
+                    </div>
                     <div class="result-label">Syntactic Correctness</div>
                 </div>
                 <div class="result-card fade-in">
-                    <div class="result-number">2,063</div>
+                    <div class="result-number">
+                        <span class="arrow-numbers">2,063</span>
+                    </div>
                     <div class="result-label">Training Examples</div>
                 </div>
             </div>
             <div style="text-align: center; margin-top: 2rem;">
                 <p style="font-size: 1.1rem; color: #333;">
+                    These results reflect the performance of our fine-tuned model under zero-shot conditions.  
                     Fine-tuning with LoRA achieved dramatic improvements across all metrics, 
                     especially in zero-shot scenarios where no examples are provided.
                 </p>
@@ -544,6 +577,20 @@
     </section>
 
     <!--  Section -->
+
+    <!-- Demo Video Section -->
+    <section class="section">
+      <div class="container">
+        <h2>Watch the Demo</h2>
+        <div class="video-container">
+          <iframe 
+            src="https://www.youtube.com/embed/Nkl4M79OhjU" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+    </section>
 
 
     <!-- Getting Started Section -->
@@ -563,14 +610,14 @@
                 </div>
                 
                 <div class="feature-card fade-in">
-                    <div class="feature-icon">
-                        <i class="fas fa-book"></i>
-                    </div>
-                    <h3>Read Documentation</h3>
-                    <p>Comprehensive guides, API documentation, and tutorials to help you integrate SwarmChat into your robotics projects.</p>
-                    <a href="#" class="btn btn-primary" style="margin-top: 1rem;">
-                        <i class="fas fa-book"></i> Documentation
-                    </a>
+                  <div class="feature-icon">
+                    <i class="fas fa-file-pdf"></i>
+                  </div>
+                  <h3>Read Paper(Soon)</h3>
+                  <p>Explore our full research paper detailing SwarmChat’s architecture, methods, and performance results.</p>
+                  <a href="#" class="btn btn-primary" style="margin-top: 1rem;">
+                    <i class="fas fa-file-pdf"></i> Read Paper
+                  </a>
                 </div>
                 
                 <div class="feature-card fade-in">
@@ -586,6 +633,8 @@
             </div>
         </div>
     </section>
+
+    
 
     <!-- Footer -->
     <footer class="footer">
